@@ -1,5 +1,8 @@
 # Portfolio summary
 
+- **Source repository:** [anmol2982002/routecraft-rl](https://github.com/anmol2982002/routecraft-rl)
+- **Related RL project:** [anmol2982002/opsarena-tool-rl](https://github.com/anmol2982002/opsarena-tool-rl)
+
 ## RouteCraft: GridCourier
 
 RouteCraft is a small, self-contained reinforcement-learning environment for warehouse delivery. An agent must collect a parcel and deliver it while navigating generated walls, a limited move budget, and a moving hazard on the hardest task.
