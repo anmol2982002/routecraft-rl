@@ -1,0 +1,9 @@
+# Scope note
+
+GridCourier is a small sequential decision task: an agent moves through a warehouse map, collects one parcel, and delivers it before it runs out of battery or hits the step limit. It receives a full observation containing the map, courier position, parcel and destination, remaining battery, and the moving hazard's current phase. Actions are the four cardinal moves. The environment returns a reward and explicit terminal information after each action.
+
+The three scored tasks hold the objective constant while increasing planning demands. The easy task is an open 4 x 4 map. The medium task adds generated walls on a 6 x 6 map. The hard task adds a moving hazard on a 7 x 7 map. A fourth, optional task tightens the battery budget and gives a one-time partial objective score for reaching the parcel. Each seed generates a reproducible layout; the evaluation seeds differ from the development seeds.
+
+Success means reaching the delivery cell while carrying the parcel. Wall bumps do not move the courier and cost reward; collisions and battery depletion end an episode unsuccessfully. The grader checks terminal outcomes and task milestones rather than trusting the policy's own reported score. In an actual training study, this environment could provide cheap, repeatable episodes for measuring whether a model learns map-conditioned planning, handles delayed goals, and transfers across layouts. The current planner runs check that the interface and objective are coherent; they are not evidence of learning or transfer gains.
+
+The map catalogue is self-made procedural data with no employer or customer material. The benchmark is intentionally small and inspectable. Its public generator and seeds make the evaluation reproducible but also mean it is not a secure hidden-test benchmark.
